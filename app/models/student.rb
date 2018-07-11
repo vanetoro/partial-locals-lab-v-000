@@ -19,7 +19,9 @@ class Student < ActiveRecord::Base
     if student.blank?
       Student.all
     else
-      Student.where(['name LIKE ?', "%#{student}%"])
+      Student.where(['name LIKE ?', "%#{student}%"]).each do |student|
+        student.name
+      end
     end
   end
 end
