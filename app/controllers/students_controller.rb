@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
-    binding.pry
+    @students = Student.search(params[:query])
   end
 
 private
